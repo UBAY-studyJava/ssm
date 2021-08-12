@@ -4,14 +4,15 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.soecode.lyf.dao.AppointmentDao">
 	<insert id="insertAppointment">
-		<!-- ignore 主键冲突，报错 -->
+		<!-- ignore 主键冲突，报错/ Primary key conflict, error report-->
 		INSERT ignore INTO appointment (book_id, student_id)
 		VALUES (#{bookId}, #{studentId})
 	</insert>
 	
 	<select id="queryByKeyWithBook" resultType="Appointment">
 		<!-- 如何告诉MyBatis把结果映射到Appointment同时映射book属性 -->
-		<!-- 可以自由控制SQL -->
+		<!-- MyBatis에게 결과를 Appointment함과 동시에 book속성에 맵핑 -->
+		<!-- 可以自由控制SQL/자유통제가능 -->
 		SELECT
 			a.book_id,
 			a.student_id,

@@ -4,33 +4,33 @@ import com.soecode.lyf.entity.Appointment;
 import com.soecode.lyf.enums.AppointStateEnum;
 
 /**
- * 封装预约执行后结果
+ * 封装预约执行后结果 Results after package schedule execution
  */
 public class AppointExecution {
 
-	// 图书ID
+	// 图书ID 도서ID
 	private long bookId;
 
-	// 秒杀预约结果状态
+	// 秒杀预约结果状态 두번째예약결과상태
 	private int state;
 
-	// 状态标识
+	// 状态标识 상태표시 Status Indication
 	private String stateInfo;
 
-	// 预约成功对象
+	// 预约成功对象 성공 객체 예약 Successful target for reservation
 	private Appointment appointment;
 
 	public AppointExecution() {
 	}
 
-	// 预约失败的构造器
+	// 预约失败的构造器 Reservation failed constructor 예약 실패 생성자
 	public AppointExecution(long bookId, AppointStateEnum stateEnum) {
 		this.bookId = bookId;
 		this.state = stateEnum.getState();
 		this.stateInfo = stateEnum.getStateInfo();
 	}
 
-	// 预约成功的构造器
+	// 预约成功的构造器 ~성공 
 	public AppointExecution(long bookId, AppointStateEnum stateEnum, Appointment appointment) {
 		this.bookId = bookId;
 		this.state = stateEnum.getState();

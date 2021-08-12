@@ -1,7 +1,7 @@
 package com.soecode.lyf.entity;
 
 /**
- * 图书实体
+ * 图书实体 도서 (엔티티)서브스턴스
  */
 public class Book {
 
@@ -9,7 +9,7 @@ public class Book {
 
 	private String name;// 图书名称
 
-	private int number;// 馆藏数量
+	private int number;// 馆藏数量 소장수량
 
 	public Book() {
 	}

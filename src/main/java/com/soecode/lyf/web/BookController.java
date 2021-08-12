@@ -23,7 +23,7 @@ import com.soecode.lyf.exception.RepeatAppointException;
 import com.soecode.lyf.service.BookService;
 
 @Controller
-@RequestMapping("/book") // url:/模块/资源/{id}/细分 /seckill/list
+@RequestMapping("/book") // url:/模块모듈/资源자원/{id}/细分세분 /seckill/list
 public class BookController {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -58,7 +58,7 @@ public class BookController {
 	@ResponseBody
 	private Result<AppointExecution> appoint(@PathVariable("bookId") Long bookId, @RequestParam("studentId") Long studentId) {
 		if (studentId == null || studentId.equals("")) {
-			return new Result<>(false, "学号不能为空");
+			return new Result<>(false, "Studentid is cannot be empty");
 		}
 		AppointExecution execution = null;
 		try {

@@ -1,7 +1,7 @@
 package com.soecode.lyf.exception;
 
 /**
- * 重复预约异常
+ * 重复预约异常 중복 예약 이상
  */
 public class RepeatAppointException extends RuntimeException {
 

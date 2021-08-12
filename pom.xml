@@ -13,22 +13,23 @@
    		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	<dependencies>
-		<!-- 单元测试 -->
+		<!-- Unit test -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 		</dependency>
 
-		<!-- 1.日志 -->
-		<!-- 实现slf4j接口并整合 -->
+		<!-- 1.日志/일지 -->
+		<!-- 实现slf4j接口并整合/Implementation and integration of SLF4j interfaces-->
+		<!-- slf4j인터페이스 구현 및 통합 -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.1.1</version>
 		</dependency>
 
-		<!-- 2.数据库 -->
+		<!-- 2.DB -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -76,7 +77,7 @@
 		</dependency>
 
 		<!-- 4.Spring -->
-		<!-- 1)Spring核心 -->
+		<!-- 1)Spring核心 / Spring 핵심 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -92,7 +93,7 @@
 			<artifactId>spring-context</artifactId>
 			<version>4.1.7.RELEASE</version>
 		</dependency>
-		<!-- 2)Spring DAO层 -->
+		<!-- 2)Spring DAO层(층) -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
@@ -121,7 +122,7 @@
 			<version>4.1.7.RELEASE</version>
 		</dependency>
 
-		<!-- redis客户端:Jedis -->
+		<!-- redisClient:Jedis -->
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
@@ -138,7 +139,7 @@
 			<version>1.0.8</version>
 		</dependency>
 
-		<!-- Map工具类 -->
+		<!-- Map工具类/MapTools -->
 		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>

@@ -3,7 +3,7 @@ package com.soecode.lyf.entity;
 import java.util.Date;
 
 /**
- * 预约图书实体
+ * 预约图书实体 도서 실체 예약
  */
 public class Appointment {
 
@@ -13,8 +13,8 @@ public class Appointment {
 
 	private Date appointTime;// 预约时间
 
-	// 多对一的复合属性
-	private Book book;// 图书实体
+	// 多对一的复合属性 다대일의 복합적속성
+	private Book book;// 图书实体 도서실체(substance)
 
 	public Appointment() {
 	}

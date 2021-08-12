@@ -9,9 +9,9 @@
 	http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/mvc
 	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
-	<!-- 配置SpringMVC -->
-	<!-- 1.开启SpringMVC注解模式 -->
-	<!-- 简化配置： 
+	<!-- 配置(배치)pringMVC -->
+	<!-- 1.开启SpringMVC注解模式 / Turn on Spring MVC Comment Mode -->
+	<!-- 简化配置 자동기능 / Simplify Deployment
 		(1)自动注册DefaultAnootationHandlerMapping,AnotationMethodHandlerAdapter 
 		(2)提供一些列：数据绑定，数字和日期的format @NumberFormat, @DateTimeFormat, xml,json默认读写支持 
 	-->

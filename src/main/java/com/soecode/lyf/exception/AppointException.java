@@ -1,7 +1,7 @@
 package com.soecode.lyf.exception;
 
 /**
- * 预约业务异常
+ * 预约业务异常 Reservation task abnormality 예약 작업 이상
  */
 public class AppointException extends RuntimeException {
 

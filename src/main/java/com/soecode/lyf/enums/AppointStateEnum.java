@@ -1,11 +1,13 @@
 package com.soecode.lyf.enums;
 
 /**
- * 使用枚举表述常量数据字典
+ * 使用枚举表述常量数据字典 Enumeration Representation Constant Data Dictionary
+ * 열거형 표현 상수 데이터 사전
+ * 시스템에러의 원문 : 系统异常
  */
 public enum AppointStateEnum {
 
-	SUCCESS(1, "预约成功"), NO_NUMBER(0, "库存不足"), REPEAT_APPOINT(-1, "重复预约"), INNER_ERROR(-2, "系统异常");
+	SUCCESS(1, "Reservation successful"), NO_NUMBER(0, "soldout"), REPEAT_APPOINT(-1, "duplicate reservation"), INNER_ERROR(-2, "System Error");
 
 	private int state;
 
