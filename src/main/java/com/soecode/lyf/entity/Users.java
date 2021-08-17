@@ -2,15 +2,15 @@ package com.soecode.lyf.entity;
 import java.util.UUID;
 
 /**
- * 图书实体 도서 (엔티티)서브스턴스
+ * User account details
  */
 public class Users {
 
-	private String userId;// 图书ID
+	private String userId;// user id
 
-	private String name;// 图书名称
+	private String name;// user name
 
-	private String pwd;// 馆藏数量 소장수량
+	private String pwd;// salted password
 
 	public Users() {
 	}
