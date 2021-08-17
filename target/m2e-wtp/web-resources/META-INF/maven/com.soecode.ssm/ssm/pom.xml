@@ -145,6 +145,12 @@
 			<artifactId>commons-collections</artifactId>
 			<version>3.2</version>
 		</dependency>
+		<!-- Apache Commons Codecs for SHA256 Hash -->
+		<dependency>
+    		<groupId>commons-codec</groupId>
+    		<artifactId>commons-codec</artifactId>
+    		<version>1.11</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>ssm</finalName>
