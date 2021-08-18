@@ -35,6 +35,7 @@ public class BookController {
 	private String list(Model model) {
 		List<Book> list = bookService.getList();
 		model.addAttribute("list", list);
+		System.out.println(model);
 		// list.jsp + model = ModelAndView
 		return "list";// WEB-INF/jsp/"list".jsp
 	}

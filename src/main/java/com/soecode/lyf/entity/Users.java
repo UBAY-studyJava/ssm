@@ -11,17 +11,24 @@ public class Users {
 	private String name;// user name
 
 	private String pwd;// salted password
-
-	public Users() {
-	}
-
-	public Users(String name, String pwd) {
-		this.userId = UUID.randomUUID().toString();
+	
+	private String date; // register date
+	
+	// Constructor
+	public Users(String name) {
 		this.name = name;
-		this.pwd = pwd;
 	}
-
-
+	
+	// Getter Setters
+	
+	public String getId() {
+		return userId;
+	}
+	
+	public void setId(String userId) {
+		this.userId = userId;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -38,10 +45,12 @@ public class Users {
 		this.pwd = pwd;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Book [bookId=" + bookId + ", name=" + name + ", number=" + number + "]";
-//	}
+	public String getDate() {
+		return date;
+	}
 
+	public void setDate(String date) {
+		this.date = date;
+	}
 
 }

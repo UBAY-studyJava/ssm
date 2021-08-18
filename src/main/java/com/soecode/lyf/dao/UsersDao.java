@@ -1,9 +1,9 @@
 package com.soecode.lyf.dao;
 
-import java.time.LocalDateTime;
 import org.apache.ibatis.annotations.Param;
 
 import com.soecode.lyf.entity.Users;
+import java.util.List;
 
 public interface UsersDao {
 
@@ -17,7 +17,7 @@ public interface UsersDao {
 	 */
 	int insertUser(@Param("user_id") String id, @Param("user_name") String name, @Param("user_pwd") String pwd);
 
-	Users getUsers();
+	List<Users> getAllUsers();
 	
 	/**
 	 * 通过主键查询预约图书记录，并且携带图书实体 메인키를 통한 예약도서 기록 조회 및 도서 실체 휴대
@@ -26,6 +26,6 @@ public interface UsersDao {
 	 * @param regist_date
 	 * @return
 	 */
-	Users queryUser(@Param("user_name") String name, @Param("regist_date") LocalDateTime date);
+	Users queryUser(@Param("user_name") String name);
 
 }

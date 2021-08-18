@@ -9,12 +9,11 @@
 		VALUES (#{user_id}, #{user_name}, #{user_pwd}, NOW())
 	</insert>
 	
-	<select id="getUsers" resultType="Users">
+	<select id="getAllUsers" resultType="Users">
 		<!-- get all user names and their registration date -->
 		SELECT
-			user_name,
-			regist_date
+			user_name
 		FROM
-			users
+			ssmdb.users
 	</select>
 </mapper>
