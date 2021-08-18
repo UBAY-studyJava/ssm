@@ -1,16 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@include file="bootstrap.jsp" %>
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Register New User</title>
+<meta charset="UTF-8">
+<title>List of All Users</title>
 </head>
 <body>
-	<form action="register" method="post">
-		<input type="text" name="name" value="${User.name}">
-		<input type="text" name="pwd" value="${User.pwd}">
-		<input type="submit" value="Confirm">
-	</form>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>User Name</th>
+				<th>Register Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user : ${users}">
+        		<td th:text="${user.name}"></td>
+      		</tr>
+		</tbody>
+	</table>
 </body>
 </html>

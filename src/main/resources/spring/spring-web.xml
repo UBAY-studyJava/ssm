@@ -23,10 +23,13 @@
 	 -->
 	 <mvc:default-servlet-handler/>
 	 
+	 <!-- set default page on start up  -->
+	 <mvc:view-controller path="/" view-name="index"/>
+	 
 	 <!-- 3.配置jsp 显示ViewResolver -->
 	 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	 	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
-	 	<property name="prefix" value="/WEB-INF/jsp/" />
+	 	<property name="prefix" value="/view/" />
 	 	<property name="suffix" value=".jsp" />
 	 </bean>
 	 

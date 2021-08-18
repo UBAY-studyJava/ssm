@@ -7,7 +7,3 @@
 %>
 
 <%@include file="bootstrap.jsp" %>
-
-<html>
-	head
-</html>
