@@ -2,7 +2,6 @@ package com.soecode.lyf.web;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.soecode.lyf.dto.AppointExecution;
 import com.soecode.lyf.dto.Result;
@@ -52,7 +51,32 @@ public class BookController {
 		model.addAttribute("book", book);
 		return "detail";
 	}
+	
+	@RequestMapping(value = "/{bookId}/modify", method = RequestMethod.GET)
+	private String beforeModify(@PathVariable("bookId") Long bookId, Model model) {
+		if (bookId == null) {
+			return "redirect:/book/list";
+		}
+		Book book = bookService.getById(bookId);
+		if (book == null) {
+			return "forward:/book/list";
+		}
+		model.addAttribute("book", book);
+		return "modify";
+	}
+	
+	@RequestMapping(value = "/{bookId}/modified", method = RequestMethod.POST)
+	private String modify(@PathVariable("bookId") Long bookId, @RequestParam("name") String name,
+				@RequestParam("number") int number, Model model) throws Exception {
+		String url = "redirect:/book/" + bookId + "/detail";
+		int modify = bookService.modify(bookId, name, number);
+		if (modify != 1) {
+			return url;
+		}
+	return url;
+	}
 
+	
 	// ajax json
 	@RequestMapping(value = "/{bookId}/appoint", method = RequestMethod.POST, produces = {
 			"application/json; charset=utf-8" })
@@ -73,5 +97,7 @@ public class BookController {
 		}
 		return new Result<AppointExecution>(true, execution);
 	}
+
+	
 
 }

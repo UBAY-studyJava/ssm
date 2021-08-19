@@ -36,4 +36,14 @@ public interface BookService {
 	 */
 	AppointExecution appoint(long bookId, long studentId);
 
+	/**
+	 * Modify Book Details
+	 * 
+	 * @param bookId
+	 * @param name
+	 * @param number
+	 * @return Number of rows modified
+	 */
+	int modify(long bookId, String name, int number);
+
 }

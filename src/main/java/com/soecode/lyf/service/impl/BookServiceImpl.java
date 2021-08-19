@@ -41,6 +41,11 @@ public class BookServiceImpl implements BookService {
 	public List<Book> getList() {
 		return bookDao.queryAll(0, 1000);
 	}
+	
+	@Override
+	public int modify(long bookId, String name, int number) {
+		return bookDao.modifyDetail(bookId, name, number);
+	}
 
 	@Override
 	@Transactional
