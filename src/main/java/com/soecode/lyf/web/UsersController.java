@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.soecode.lyf.entity.Book;
 import com.soecode.lyf.entity.Users;
 import com.soecode.lyf.service.UsersService;
 
@@ -27,10 +28,19 @@ public class UsersController {
 	@Autowired
 	private UsersService userService;
 	
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String usersList(Model model) {
-		model.addAttribute("users", userService.getAll());
+//	@RequestMapping(value="/", method=RequestMethod.GET)
+//	public String usersList(Model model) {
+//		model.addAttribute("users", userService.getAll());
+//		System.out.println(model);
+//		return "users";
+//	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	private String list(Model model) {
+		List<Users> list = userService.getListUsers();
+		model.addAttribute("list", list);
 		System.out.println(model);
+		// users.jsp + model = ModelAndView
 		return "users";
 	}
 

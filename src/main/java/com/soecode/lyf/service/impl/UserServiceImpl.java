@@ -24,12 +24,12 @@ public class UserServiceImpl implements UsersService {
 
 	@Override
 	public Users getByName(String userName) {
-		return usersDao.queryUser(userName);
+		return usersDao.selectUser(userName);
 	}
 
 	@Override
-	public List<Users> getAll() {
-		return usersDao.getAllUsers();
+	public List<Users> getListUsers() {
+		return usersDao.queryAll();
 	}
 
 }

@@ -26,6 +26,6 @@ public interface UsersService {
 	 * 
 	 * @return
 	 */
-	List<Users> getAll();
+	List<Users> getListUsers();
 
 }

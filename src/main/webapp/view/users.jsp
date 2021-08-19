@@ -8,18 +8,19 @@
 <title>List of All Users</title>
 </head>
 <body>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>User Name</th>
-				<th>Register Date</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="user : ${users}">
-        		<td th:text="${user.name}"></td>
-      		</tr>
-		</tbody>
-	</table>
+	<div style="width:80%">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>User Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${list}">
+		        	<td><span th:text="${user}">Title</span></td>
+		      	</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

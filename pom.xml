@@ -115,6 +115,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.1.7.RELEASE</version>
 		</dependency>
+		<!-- Thymeleaf ver2.5.2 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
