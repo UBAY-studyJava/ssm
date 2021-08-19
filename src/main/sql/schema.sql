@@ -1,3 +1,5 @@
+DROP TABLE `appointment`;
+
 
 CREATE TABLE `book` (
   `book_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'bookID',
@@ -23,9 +25,14 @@ CREATE TABLE `appointment` (
   INDEX `idx_appoint_time` (`appoint_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='BookAppointment';
 
+
 CREATE TABLE users (
   user_id VARCHAR(255) NOT NULL COMMENT 'bookID',
   user_name VARCHAR(255) NOT NULL COMMENT 'studentId',
   user_pwd VARCHAR(255) NOT NULL COMMENT 'saltedpassword',
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='usertable';
+
+
+SELECT * FROM `book`;
+SELECT * FROM `appointment`;
