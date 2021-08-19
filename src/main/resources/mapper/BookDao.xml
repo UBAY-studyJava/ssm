@@ -36,4 +36,13 @@
 			book_id = #{bookId}
 		AND number > 0
 	</update>
+	
+	<update id="modifyDetail">
+		UPDATE book
+		SET
+			name = #{name},
+			number = #{number}
+		WHERE
+			book_id = #{bookId}
+	</update>
 </mapper>

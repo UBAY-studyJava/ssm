@@ -33,5 +33,15 @@ public interface BookDao {
 	 * @return 如果影响行数等于>1，表示更新的记录行数 만약 줄의 수가 >1과 같다면, 갱신된 줄의 수를 표시한다.
 	 */
 	int reduceNumber(long bookId);
+	
+	/**
+	 * Modify Book Details (Update)
+	 * 
+	 * @param bookId
+	 * @param name
+	 * @param number
+	 * @return Number of rows modified
+	 */
+	int modifyDetail(@Param("bookId") long bookId, @Param("name") String name, @Param("number") int number);
 
 }
