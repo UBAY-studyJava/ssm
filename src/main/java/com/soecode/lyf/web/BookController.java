@@ -1,6 +1,11 @@
 package com.soecode.lyf.web;
 
+import java.awt.Window;
+import java.net.http.HttpClient.Redirect;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.soecode.lyf.dto.AppointExecution;
 import com.soecode.lyf.dto.Result;
+import com.soecode.lyf.entity.Appointment;
 import com.soecode.lyf.entity.Book;
 import com.soecode.lyf.enums.AppointStateEnum;
 import com.soecode.lyf.exception.NoNumberException;
@@ -34,7 +40,6 @@ public class BookController {
 	private String list(Model model) {
 		List<Book> list = bookService.getList();
 		model.addAttribute("list", list);
-		System.out.println(model);
 		// list.jsp + model = ModelAndView
 		return "list";// WEB-INF/jsp/"list".jsp
 	}
@@ -65,25 +70,48 @@ public class BookController {
 		return "modify";
 	}
 	
+//	@RequestMapping(value = "/{bookId}/modified", method = RequestMethod.POST)
+//	private String modify(@PathVariable("bookId") Long bookId, @RequestParam("name") String name,
+//				@RequestParam("number") int number) throws Exception {
+//		if (bookId == null || name == null || number <= 0) {
+//			return "redirect:/book/" + bookId + "/modify";
+//		}
+//		String url = "redirect:/book/" + bookId + "/detail";
+//		int modify = bookService.modify(bookId, name, number);
+//		if (modify != 1) {
+//			return url;
+//		}
+//	return url;
+//	}
+	
+	
 	@RequestMapping(value = "/{bookId}/modified", method = RequestMethod.POST)
 	private String modify(@PathVariable("bookId") Long bookId, @RequestParam("name") String name,
-				@RequestParam("number") int number, Model model) throws Exception {
-		String url = "redirect:/book/" + bookId + "/detail";
+				@RequestParam("number") int number) throws Exception {
+		String url = "redirect:/book/" + bookId;
+		if (bookId == null || name == null || name == "" || name == " " || number <= 0) {
+			return url + "/modify";
+		}
 		int modify = bookService.modify(bookId, name, number);
 		if (modify != 1) {
-			return url;
+			return url + "/detail";
 		}
-	return url;
+	return url + "/detail";
 	}
-
 	
+	
+
+	// testing
 	// ajax json
-	@RequestMapping(value = "/{bookId}/appoint", method = RequestMethod.POST, produces = {
-			"application/json; charset=utf-8" })
+	@RequestMapping(value = "/appoint", method = RequestMethod.POST)
 	@ResponseBody
-	private Result<AppointExecution> appoint(@PathVariable("bookId") Long bookId, @RequestParam("studentId") Long studentId) {
+	private void appoint(@RequestParam("bookId") Long bookId, @RequestParam("studentId") Long studentId, HttpServletResponse response) throws Exception {
+		Result<AppointExecution> appointment;
+		String url = "/ssm/book/list";
 		if (studentId == null || studentId.equals("")) {
-			return new Result<>(false, "Studentid is cannot be empty");
+			appointment = new Result<>(false, "Studentid is cannot be empty");
+			JOptionPane.showMessageDialog(null, "Studentid is cannot be empty");
+			response.sendRedirect(url);
 		}
 		AppointExecution execution = null;
 		try {
@@ -95,9 +123,23 @@ public class BookController {
 		} catch (Exception e) {
 			execution = new AppointExecution(bookId, AppointStateEnum.INNER_ERROR);
 		}
-		return new Result<AppointExecution>(true, execution);
+		appointment = new Result<AppointExecution>(true, execution);
+		JOptionPane.showMessageDialog(null, appointment.getData().getStateInfo());
+		response.sendRedirect(url);
+	}
+
+	@RequestMapping(value="/appoint/list", method = RequestMethod.GET)
+	private String listAppointment(Model model) {
+		List<Appointment> list = bookService.getAppointment();
+		model.addAttribute("list", list);
+		return "appointList";
 	}
 
 	
+	@RequestMapping(value = "/insert", method = RequestMethod.GET)
+	private String insert() {
+		return "insert";
+	}
 
+	
 }

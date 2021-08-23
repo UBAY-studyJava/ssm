@@ -86,5 +86,10 @@ public class BookServiceImpl implements BookService {
 			throw new AppointException("appoint inner error:" + e.getMessage());
 		}
 	}
+	
+	@Override
+	public List<Appointment> getAppointment(){
+		return appointmentDao.appointAll();
+	}
 
 }
