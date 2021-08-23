@@ -69,22 +69,7 @@ public class BookController {
 		model.addAttribute("book", book);
 		return "modify";
 	}
-	
-//	@RequestMapping(value = "/{bookId}/modified", method = RequestMethod.POST)
-//	private String modify(@PathVariable("bookId") Long bookId, @RequestParam("name") String name,
-//				@RequestParam("number") int number) throws Exception {
-//		if (bookId == null || name == null || number <= 0) {
-//			return "redirect:/book/" + bookId + "/modify";
-//		}
-//		String url = "redirect:/book/" + bookId + "/detail";
-//		int modify = bookService.modify(bookId, name, number);
-//		if (modify != 1) {
-//			return url;
-//		}
-//	return url;
-//	}
-	
-	
+		
 	@RequestMapping(value = "/{bookId}/modified", method = RequestMethod.POST)
 	private String modify(@PathVariable("bookId") Long bookId, @RequestParam("name") String name,
 				@RequestParam("number") int number) throws Exception {
@@ -135,10 +120,21 @@ public class BookController {
 		return "appointList";
 	}
 
-	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
-	private String insert() {
+	private String beforeInsert() {
 		return "insert";
+	}
+
+	@RequestMapping(value = "/inserted", method = RequestMethod.POST)
+	private String insert(@RequestParam("name") String name, @RequestParam("number") int number) throws Exception {
+	if (name == null || name == "" || name == " " || number <= 0) {
+		return "redirect:/book/insert";
+	}
+	int insert = bookService.insert(name, number);
+	if (insert != 1) {
+		return "redirect:/book/insert";
+	}
+	return "redirect:/book/list";
 	}
 
 	

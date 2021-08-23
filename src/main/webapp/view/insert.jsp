@@ -4,18 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <title>Insert New Book</title>
 </head>
 <body>
-
-     <h1>Insert New Book</h1>
-  <form action="#" method="GET">
-   <p>Book Title : <input type="text" name="name"></p>
-   <p>Book_ID : <input type="text" name="book_id"></p> 
-   <p>Number : <input type="text" name="number"></p> <!-- Inventory quantity, cnt -->
-   <p><button type="submit" class="btn btn-primary">Insert New Book</button></p>
+<div class="card-body">
+  <h2>Insert New Book</h2>
+  
+  <form action="../book/inserted" method="POST">
+	  <p>Book Title : <input type="text" name="name"></p>
+	  <p>Number : <input type="text" name="number"></p>
+	  <br>
+	  <button type="submit" class="btn btn-primary">Insert New Book</button>
   </form>
 
+</div>
 </body>
 </html>

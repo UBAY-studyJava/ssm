@@ -43,5 +43,15 @@ public interface BookDao {
 	 * @return Number of rows modified
 	 */
 	int modifyDetail(@Param("bookId") long bookId, @Param("name") String name, @Param("number") int number);
+	
+	/**
+    * Book Insert
+    * 
+    * @param name
+    * @param number
+    * @return Number of rows Inserted
+    */
+	int insert(@Param("name") String name, @Param("number") int number);
+
 
 }

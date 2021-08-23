@@ -48,6 +48,14 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
+	public int insert(String name, int number) {
+		return bookDao.insert(name, number);
+	}
+
+	
+	
+	
+	@Override
 	@Transactional
 	/**
 	 * 使用注解控制事务方法的优点： 1.开发团队达成一致约定，明确标注事务方法的编程风格

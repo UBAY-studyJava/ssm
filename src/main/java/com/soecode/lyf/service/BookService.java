@@ -54,4 +54,12 @@ public interface BookService {
 	 */
 	List<Appointment> getAppointment();
 
+	/**
+	 * 
+	 * @param name
+	 * @param number
+	 * @return Number of rows inserted
+	 */
+	int insert(String name, int number);
+
 }
