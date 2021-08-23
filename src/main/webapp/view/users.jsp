@@ -1,24 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="bootstrap.jsp" %>
+<%@include file="tag.jsp" %>
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>List of All Users</title>
 </head>
 <body>
-	<div style="width:80%">
+	<div style="width:50%" class="table-responsive">
 		<table class="table">
 			<thead>
 				<tr>
-					<th>User Name</th>
+					<th class="text-center">User Names</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="user : ${list}">
-		        	<td><span th:text="${user}">Title</span></td>
-		      	</tr>
+				<c:forEach var="user" items="${list}">
+					<tr>
+						<td>${user}</td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>

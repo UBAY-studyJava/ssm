@@ -28,20 +28,13 @@ public class UsersController {
 	@Autowired
 	private UsersService userService;
 	
-//	@RequestMapping(value="/", method=RequestMethod.GET)
-//	public String usersList(Model model) {
-//		model.addAttribute("users", userService.getAll());
-//		System.out.println(model);
-//		return "users";
-//	}
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	private String list(Model model) {
 		List<Users> list = userService.getListUsers();
 		model.addAttribute("list", list);
-		System.out.println(model);
+//		System.out.println(model);
 		// users.jsp + model = ModelAndView
 		return "users";
 	}
-
 }

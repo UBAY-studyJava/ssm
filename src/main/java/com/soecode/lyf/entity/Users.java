@@ -20,6 +20,11 @@ public class Users {
 		
 	}
 	
+	public Users(String name, String pwd) {
+		this.name = name;
+		this.pwd = pwd;
+	}
+	
 	public Users(String id, String name, String pwd, Date date) {
 		this.id = id;
 		this.name = name;

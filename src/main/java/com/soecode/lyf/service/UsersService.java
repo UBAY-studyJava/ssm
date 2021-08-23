@@ -12,7 +12,8 @@ import com.soecode.lyf.entity.Users;
  * 인터페이스의 세 가지 측면: 방법 정의 입도, 파라미터, 되돌리기 유형(리턴 타입/이상)
  */
 public interface UsersService {
-
+	
+	
 	/**
 	 * look up user by name
 	 * 
@@ -28,4 +29,20 @@ public interface UsersService {
 	 */
 	List<Users> getListUsers();
 
+	/**
+	 * Register new user
+	 * 
+	 * @param user
+	 * @return 0 if user name exists, 1 if success
+	 */
+	int registerNew(Users user);
+	
+	
+	/**
+	 * checks if user's name exists and if their password matches records
+	 * 
+	 * @param user
+	 * @return 2 for success, 1 for user name error and 0 for fail
+	 */
+	int checkUserLogin(Users user);
 }
