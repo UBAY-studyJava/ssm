@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="bootstrap.jsp" %>
+<%@include file="tag.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +11,7 @@
 <title>Modify Book Details</title>
 </head>
 <body>
+<jsp:include page="/view/header.jsp"></jsp:include>
 
 <div class="card-body">
 	<h2>Modify Details</h2>

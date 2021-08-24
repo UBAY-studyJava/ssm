@@ -92,10 +92,7 @@ public class BookController {
 		return "redirect:/book/list";
 	}
 
-	
-	
 
-	// testing
 	// ajax json
 	@RequestMapping(value = "/appoint", method = RequestMethod.POST)
 	@ResponseBody
