@@ -9,7 +9,9 @@
 <title>List of All Users</title>
 </head>
 <body>
-	<div style="width:50%" class="table-responsive">
+	<jsp:include page="/view/header.jsp"></jsp:include>
+	<div class="container d-flex h-100">
+		<div class="table-responsive">
 		<table class="table">
 			<thead>
 				<tr>
@@ -24,6 +26,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
+	</div>
 	</div>
 </body>
 </html>
