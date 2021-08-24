@@ -7,13 +7,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Register New User</title>
+	<meta charset="UTF-8">
+	<title>Register New User</title>
 </head>
-<body style="margin:10px;padding:10px;">
+<body>
+	<jsp:include page="/view/header.jsp"></jsp:include>
 	<div class="container d-flex h-100">
 		<form action="apply" method="post">
-			<div style="width:50%" class="table-responsive">
+			<div class="table-responsive">
 				<table class="table">
 					<thead>
 						<tr>
