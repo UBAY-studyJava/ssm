@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@include file="bootstrap.jsp" %>
+<%@include file="tag.jsp" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -10,6 +12,7 @@
 
 </head>
 <body>
+<jsp:include page="/view/header.jsp"></jsp:include>
 	
 <div class="card-body">
 	<h2>Book List</h2>
@@ -37,8 +40,6 @@
 			<td><a href="${book.bookId }/detail">${book.name }</a></td><!-- name click, go to detail page -->
 			<td>${book.number }</td>
 			<td><a href="${book.bookId }/delete">Delete</a></td><!-- Delete click, Delete row & go to Book List -->
-			<td><a href="${book.bookId }/appoint">appoint test</a></td>
-
 		</tr>
 	</c:forEach>
 	</tbody>

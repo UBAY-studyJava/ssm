@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@include file="bootstrap.jsp" %>
+<%@include file="tag.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +11,7 @@
 <title>Appointment Page</title>
 </head>
 <body>
+<jsp:include page="/view/header.jsp"></jsp:include>
 
 <div class="card-body">
 	<h2>Check Appointment</h2>
