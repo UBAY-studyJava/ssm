@@ -24,7 +24,7 @@
 	 <mvc:default-servlet-handler/>
 	 
 	 <!-- set default page on start up  -->
-	 <mvc:view-controller path="/" view-name="index"/>
+	 <mvc:view-controller path="/" view-name="main"/>
 	 
 	 <!-- 3.配置jsp 显示ViewResolver -->
 	 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
