@@ -17,21 +17,21 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	        <a class="nav-link" href="/ssm/main">Home <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="book/list">List</a>
+	        <a class="nav-link" href="/ssm/book/list">List</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="users">Users</a>
+	        <a class="nav-link" href="/ssm/users/list">Users</a>
 	      </li>
 	    </ul>
 	    <ul class="navbar-nav ml-auto">
 	      <li class="nav-item">
-	        <a class="nav-link" href="login">Login</a>
+	        <a class="nav-link" href="/ssm/login">Login</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="register">Register</a>
+	        <a class="nav-link" href="/ssmregister">Register</a>
 	      </li>
 	    </ul>
 	  </div>
