@@ -46,6 +46,13 @@ public interface BookService {
 	 * @return Number of rows modified
 	 */
 	int modify(long bookId, String name, int number);
+	/**
+	 * delete Book Details
+	 * 
+	 * @param bookId
+	 * @return Number of rows delete
+	 */
+	int delete(long bookId);
 
 	
 	/**

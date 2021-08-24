@@ -36,7 +36,9 @@
 			<td>${book.bookId }</td>
 			<td><a href="${book.bookId }/detail">${book.name }</a></td><!-- name click, go to detail page -->
 			<td>${book.number }</td>
-			<td><a href="#">Delete</a></td><!-- Delete click, Delete row & go to Book List -->
+			<td><a href="${book.bookId }/delete">Delete</a></td><!-- Delete click, Delete row & go to Book List -->
+			<td><a href="${book.bookId }/appoint">appoint test</a></td>
+
 		</tr>
 	</c:forEach>
 	</tbody>

@@ -46,6 +46,11 @@ public class BookServiceImpl implements BookService {
 	public int modify(long bookId, String name, int number) {
 		return bookDao.modifyDetail(bookId, name, number);
 	}
+	
+	@Override
+	public int delete(long bookId) {
+		return bookDao.delete(bookId);
+	}
 
 	@Override
 	public int insert(String name, int number) {
