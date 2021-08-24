@@ -36,3 +36,4 @@ CREATE TABLE users (
 
 SELECT * FROM `book`;
 SELECT * FROM `appointment`;
+SELECT * FROM users;
