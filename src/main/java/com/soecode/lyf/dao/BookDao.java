@@ -44,4 +44,12 @@ public interface BookDao {
 	 */
 	int modifyDetail(@Param("bookId") long bookId, @Param("name") String name, @Param("number") int number);
 
+	/**
+	 * Modify Book Details (delete)
+	 * 
+	 * @param bookId
+	 * @return Number of rows delete
+	 */
+	
+	int delete(@Param("bookId") long bookId);
 }

@@ -75,6 +75,23 @@ public class BookController {
 		}
 	return url;
 	}
+	
+//	@RequestMapping(value = "/{bookId}/delete", method = RequestMethod.POST)
+//	private String delete(@PathVariable("bookId") Long bookId) throws Exception {
+//		int delete = bookService.delete(bookId);
+//		if (delete != 1) {
+//			return "redirect:/book/list";
+//		}
+//		return "redirect:/book/list";
+//	}
+	
+	// 게시물 삭제
+	@RequestMapping(value = "/{bookId}/delete", method = RequestMethod.POST)
+	private String getDelete(@PathVariable("bookId") Long bookId) throws Exception {
+		bookService.delete(bookId);
+			
+		return "redirect:/book/list";
+	}
 
 	
 	// ajax json

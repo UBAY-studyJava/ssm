@@ -45,4 +45,12 @@
 		WHERE
 			book_id = #{bookId}
 	</update>
+	
+	<delete id="delete">
+      DELETE from book
+      WHERE
+         book_id = #{bookId}
+   
+   </delete>
+	
 </mapper>
