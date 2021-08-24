@@ -3,6 +3,7 @@ package com.soecode.lyf.service;
 import java.util.List;
 
 import com.soecode.lyf.dto.AppointExecution;
+import com.soecode.lyf.entity.Appointment;
 import com.soecode.lyf.entity.Book;
 
 /**
@@ -52,5 +53,20 @@ public interface BookService {
 	 * @return Number of rows delete
 	 */
 	int delete(long bookId);
+
+	
+	/**
+	 * 
+	 * @return List of appointment
+	 */
+	List<Appointment> getAppointment();
+
+	/**
+	 * 
+	 * @param name
+	 * @param number
+	 * @return Number of rows inserted
+	 */
+	int insert(String name, int number);
 
 }

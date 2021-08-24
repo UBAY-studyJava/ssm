@@ -1,31 +1,45 @@
 package com.soecode.lyf.web;
 
-import org.apache.ibatis.annotations.Param;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.soecode.lyf.entity.Users;
+import com.soecode.lyf.service.UsersService;
 
 
 @Controller
-@RequestMapping("/register") // url:/模块모듈/资源자원/{id}/细分세분 /seckill/list
 public class RegisterController {
-
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView register(Users user) {
+	@Autowired
+	private UsersService userService;
+
+	
+	@RequestMapping(value="/register")
+	public String index() {
+		return "register";
+	}
+	
+	
+	@RequestMapping(value="apply", method = RequestMethod.POST)
+	public String register(@RequestParam("name") String name, @RequestParam("pwd") String pwd, Model model) {
 		
-		return new ModelAndView();
+		Users newUser = new Users(name, pwd);
+		int result = userService.checkUserLogin(newUser);
+		
+		switch(result) {
+		case 0:
+			return "register";
+		case 1:
+			return "register";
+		case 2:
+			return "index";
+		}
+		
+		return "index";
 	}
 
 }

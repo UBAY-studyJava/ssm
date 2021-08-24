@@ -46,11 +46,19 @@
 			book_id = #{bookId}
 	</update>
 	
+
 	<delete id="delete">
       DELETE from book
       WHERE
          book_id = #{bookId}
    
    </delete>
+
+	<insert id="insert">  
+		INSERT INTO book (name, number) 
+		VALUES (#{name}, #{number})
+   </insert>
+	
+
 	
 </mapper>

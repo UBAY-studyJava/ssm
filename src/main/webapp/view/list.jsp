@@ -15,34 +15,45 @@
 	<h2>Book List</h2>
 	<br>
 	
+	<form action="appoint" method="POST">
 	<table style="border:1px solid black; border-collapse: collapse;" border="1">
 	<thead style="text-align:center">
 	<tr>
+		<th width="50px"> </th>
 		<th width="100px">Book ID</th>
 		<th width="200px">Title</th>
 		<th width="100px">Count</th>
 		<th width="100px">Delete</th>
-		<th width="100px">Appoint</th>
 	</tr>
 	</thead>
 	
 	<tbody>
 	<c:forEach var="book" items="${list }">
 		<tr>
+			<td style="text-align:center">
+				<input type="radio" name="bookId" value="${book.bookId }">		
+			</td>
 			<td>${book.bookId }</td>
 			<td><a href="${book.bookId }/detail">${book.name }</a></td><!-- name click, go to detail page -->
 			<td>${book.number }</td>
 			<td><a href="${book.bookId }/delete">Delete</a></td><!-- Delete click, Delete row & go to Book List -->
 			<td><a href="${book.bookId }/appoint">appoint test</a></td>
+
 		</tr>
 	</c:forEach>
 	</tbody>
 	</table>
-	<br>
-	<br>
-	<button type="button" class="btn btn-primary" onclick="#">Insert New Book</button> <!-- User : Admin -->
-	<button type="button" class="btn btn-secondary" onclick="#">My Book Appointment</button> <!-- User : student_id -->
-																<!-- Admin : Whole Book Appointment List Page (?) -->
+	<br><br><br>
+	StudentID : <input type="text" name="studentId" >
+	&nbsp;&nbsp;
+	<button type="submit" class="btn btn-secondary">Book Appoint</button>
+	</form>
+	
+</div>
+
+<div class="card-body"> <!-- User : admin -->
+	<button type="button" class="btn btn-primary" onclick="location='insert'">Insert New Book</button>
+	<button type="button" class="btn btn-primary" onclick="location='appoint/list'">Check Appointment</button>
 </div>
 
 </body>

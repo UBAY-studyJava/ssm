@@ -34,5 +34,14 @@ public class BookDaoTest extends BaseTest {
 		int update = bookDao.reduceNumber(bookId);
 		System.out.println("update=" + update);
 	}
+	
+	@Test
+	public void testModifyDetail() throws Exception {
+		long bookId = 1001;
+		String name = "UnitTest";
+		int number = 30;
+		int modify = bookDao.modifyDetail(bookId, name, number);
+		System.out.println("modify=" + modify);
+	}
 
 }
