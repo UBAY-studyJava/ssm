@@ -8,5 +8,8 @@
 </head>
 <body>
 	Hi, this is the Index page
+	
+	<br>
+	<p><a href="book/list">Go to List</a></p>
 </body>
 </html>

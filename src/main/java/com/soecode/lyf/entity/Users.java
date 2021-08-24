@@ -1,32 +1,44 @@
 package com.soecode.lyf.entity;
-import java.util.UUID;
+import java.util.Date;
 
 /**
  * User account details
+ * userId, name, pwd, date
  */
 public class Users {
 
-	private String userId;// user id
+	private String id;// user id
 
 	private String name;// user name
 
 	private String pwd;// salted password
 	
-	private String date; // register date
+	private Date date; // register date
 	
-	// Constructor
-	public Users(String name) {
+	// Constructors
+	public Users() {
+		
+	}
+	
+	public Users(String name, String pwd) {
 		this.name = name;
+		this.pwd = pwd;
+	}
+	
+	public Users(String id, String name, String pwd, Date date) {
+		this.id = id;
+		this.name = name;
+		this.pwd = pwd;
+		this.date = date;
 	}
 	
 	// Getter Setters
-	
 	public String getId() {
-		return userId;
+		return id;
 	}
 	
-	public void setId(String userId) {
-		this.userId = userId;
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	public String getName() {
@@ -45,12 +57,21 @@ public class Users {
 		this.pwd = pwd;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
+	@Override
+	public String toString() {
+		return "User [id=" + id + 
+				" name=" + name + 
+				" pwd=" + pwd + 
+				" date=" + date + "]";
+		
+	}
+	
 }

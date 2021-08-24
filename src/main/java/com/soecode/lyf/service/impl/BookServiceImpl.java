@@ -48,6 +48,14 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
+	public int insert(String name, int number) {
+		return bookDao.insert(name, number);
+	}
+
+	
+	
+	
+	@Override
 	@Transactional
 	/**
 	 * 使用注解控制事务方法的优点： 1.开发团队达成一致约定，明确标注事务方法的编程风格
@@ -85,6 +93,11 @@ public class BookServiceImpl implements BookService {
 			// 所有编译期异常转换为运行期异常 모든 컴파일 시간 이상 징후를 런타임 이상 징후로 변환
 			throw new AppointException("appoint inner error:" + e.getMessage());
 		}
+	}
+	
+	@Override
+	public List<Appointment> getAppointment(){
+		return appointmentDao.appointAll();
 	}
 
 }

@@ -45,4 +45,12 @@
 		WHERE
 			book_id = #{bookId}
 	</update>
+	
+	
+	<insert id="insert">  
+		INSERT INTO book (name, number) 
+		VALUES (#{name}, #{number})
+   </insert>
+	
+	
 </mapper>

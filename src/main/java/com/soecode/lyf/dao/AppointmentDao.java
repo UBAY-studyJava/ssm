@@ -1,8 +1,11 @@
 package com.soecode.lyf.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.soecode.lyf.entity.Appointment;
+import com.soecode.lyf.entity.Book;
 
 public interface AppointmentDao {
 
@@ -23,5 +26,12 @@ public interface AppointmentDao {
 	 * @return
 	 */
 	Appointment queryByKeyWithBook(@Param("bookId") long bookId, @Param("studentId") long studentId);
+	
+	
+	/**
+	 * 
+	 * @return List of appointment
+	 */
+	List<Appointment> appointAll();
 
 }
