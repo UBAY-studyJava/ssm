@@ -10,16 +10,16 @@ import com.soecode.lyf.entity.Book;
 public interface BookDao {
 
 	/**
-	 * 通过ID查询单本图书
-	 * ID통한 도서조회
+	 * 通过ID查询单本图书 ID를 통한 단본 도서 조회
+	 * 
 	 * @param id
 	 * @return
 	 */
 	Book queryById(long id);
 
 	/**
-	 * 查询所有图书
-	 * 모든 도서 조회
+	 * 查询所有图书 모든 도서 조회
+	 * 
 	 * @param offset 查询起始位置 시작 위치 조회
 	 * @param limit 查询条数 조회 건수
 	 * @return
@@ -27,10 +27,10 @@ public interface BookDao {
 	List<Book> queryAll(@Param("offset") int offset, @Param("limit") int limit);
 
 	/**
-	 * 减少馆藏数量 소장수량 감소
+	 * 减少馆藏数量 소장 수량을 줄이다
 	 * 
 	 * @param bookId
-	 * @return 如果影响行数等于>1，表示更新的记录行数 만약 줄의 수가 >1과 같다면, 갱신된 줄의 수를 표시한다.
+	 * @return 如果影响行数等于>1，表示更新的记录行数 만약 영향 줄의 수가 >1과 같다면, 업데이트된 기록의 수를 나타냅니다.
 	 */
 	int reduceNumber(long bookId);
 	

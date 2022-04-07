@@ -28,7 +28,7 @@ import com.soecode.lyf.exception.RepeatAppointException;
 import com.soecode.lyf.service.BookService;
 
 @Controller
-@RequestMapping("/book") // url:/模块모듈/资源자원/{id}/细分세분 /seckill/list
+@RequestMapping("/book") // url:/模块/资源/{id}/细分/seckill/list
 public class BookController {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -84,7 +84,7 @@ public class BookController {
 	return url + "/detail";
 	}
 
-	// 게시물 삭제
+	// 寃뚯떆臾� �궘�젣
 	@RequestMapping(value = "/{bookId}/delete")
 	private String getDelete(@PathVariable("bookId") Long bookId) throws Exception {
 		int delete = bookService.delete(bookId);

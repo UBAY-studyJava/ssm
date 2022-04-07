@@ -24,7 +24,7 @@ public class BookServiceImpl implements BookService {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	// 注入Service依赖 서비스의존도 주입
+	// 注入Service依赖 주입Service의존
 	@Autowired
 	private BookDao bookDao;
 
@@ -63,26 +63,21 @@ public class BookServiceImpl implements BookService {
 	@Override
 	@Transactional
 	/**
-	 * 使用注解控制事务方法的优点： 1.开发团队达成一致约定，明确标注事务方法的编程风格
-	 * 2.保证事务方法的执行时间尽可能短，不要穿插其他网络操作，RPC/HTTP请求或者剥离到事务方法外部
-	 * 3.不是所有的方法都需要事务，如只有一条修改操作，只读操作不需要事务控制
-	 * 
-	 * 업무 제어 방법의 장점 설명 사용:
-	 *1. 개발진이 약속하여 사무 방법의 프로그래밍 스타일을 명확하게 표시한다.
-	 *2. 사무방법의 실행시간을 최대한 짧게 보장하고 다른 네트워크를 삽입하지 마십시오, RPC/HTTP.사무 방법 외부로 구하거나 박리
-	 *3. 모든 방법이 사무가 필요한 것은 아닙니다. 단 한 가지 수정 조작이 있을 경우 읽기 조작은 사무제어가 필요 없습니다.
+	 * 使用注解控制事务方法的优点： 1.开发团队达成一致约定，明确标注事务方法的编程风格			주석 제어 트랜잭션 방법의 장점 : 1. 개발진이 만장일치로 트랜잭션 방법의 프로그래밍 스타일을 명시하기로 약속함
+	 * 2.保证事务方法的执行时间尽可能短，不要穿插其他网络操作，RPC/HTTP请求或者剥离到事务方法外部	2. 트랜잭션 메서드의 실행 시간을 최대한 짧게 보장하며, 다른 네트워크 조작, RPC/HTTP 요청 또는자는 사무방법의 외부로 박리된다.
+	 * 3.不是所有的方法都需要事务，如只有一条修改操作，只读操作不需要事务控制					3. 모든 방법에 트랜잭션이 필요한 것은 아닙니다. 만약 단 하나의 수정 작업만 있다면, 읽기 작업에는 트랜잭션 제어가 필요 없습니다.
 	 * 
 	 */
 	public AppointExecution appoint(long bookId, long studentId) {
 		try {
-			// 减库存 재고감소
+			// 减库存 재고 감소
 			int update = bookDao.reduceNumber(bookId);
-			if (update <= 0) {// 库存不足 재고부족 soldout
+			if (update <= 0) {// 库存不足 재고 부족
 				throw new NoNumberException("no number");
 			} else {
-				// 执行预约操作 예약 조작 실행
+				// 执行预约操作 예약 작업을 실행
 				int insert = appointmentDao.insertAppointment(bookId, studentId);
-				if (insert <= 0) {// 重复预约 중복예약
+				if (insert <= 0) {// 重复预约 중복 예약
 					throw new RepeatAppointException("repeat appoint");
 				} else {// 预约成功 예약 성공
 					Appointment appointment = appointmentDao.queryByKeyWithBook(bookId, studentId);
@@ -95,7 +90,7 @@ public class BookServiceImpl implements BookService {
 			throw e2;
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
-			// 所有编译期异常转换为运行期异常 모든 컴파일 시간 이상 징후를 런타임 이상 징후로 변환
+			// 所有编译期异常转换为运行期异常 모든 컴파일러 기간이 비정상적으로 운영 기간 이상으로 전환됨
 			throw new AppointException("appoint inner error:" + e.getMessage());
 		}
 	}
