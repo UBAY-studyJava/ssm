@@ -15,7 +15,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
+// *** 에러나서 임시로 주석처리함 *** import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,8 +24,8 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Kemin
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-// 配置事务的回滚,对数据库的增删改都会回滚,便于测试用例的循环利用
-@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
+// �뀓營�雅뗥뒦�쉪�썮譯�,野방빊�뜮佯볡쉪罌욃닠�뵻�꺗鴉싧썮譯�,堊요틢役뗨캊�뵪堊뗧쉪孃ょ렞�닶�뵪
+// *** 에러나서 임시로 주석처리함 ***@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 @Transactional
 public class BookControllerTest extends AbstractContextControllerTests {
 

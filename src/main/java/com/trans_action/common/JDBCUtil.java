@@ -24,18 +24,7 @@ public class JDBCUtil {
 	}
 	
 	
-	public static void close(ResultSet rs, PreparedStatement stmt, Connection conn) {
-		if(stmt != null) {
-			try {
-				if(!rs.isClosed())
-					rs.close();
-			} catch(Exception e) {
-				e.printStackTrace();
-			} finally {
-				rs = null;
-			}
-		} //end of it
-		
+	public static void close(PreparedStatement stmt, Connection conn) {
 		if(stmt != null) {
 			try {
 				if(!stmt.isClosed())
@@ -59,4 +48,42 @@ public class JDBCUtil {
 		} //end of it
 		
 	}
+	
+	 public static void close(ResultSet rs, PreparedStatement stmt, Connection conn) {
+		  if (rs != null) {
+		   try {
+		    if (!rs.isClosed())
+		     rs.close();
+		   } catch (Exception e) {
+		    e.printStackTrace();
+		   } finally {
+		    rs = null;
+		   }
+		  } // end of if
+		  
+		  if (stmt != null) {
+		   try {
+		    if (!stmt.isClosed())
+		     stmt.close();
+		   } catch (Exception e) {
+		    e.printStackTrace();
+		   } finally {
+		    stmt = null;
+		   }
+		  } // end of if
+		  
+		  if (conn != null) {
+		   try {
+		    if (!conn.isClosed())
+		     conn.close();
+		   } catch (Exception e) {
+		    e.printStackTrace();
+		   } finally {
+		    conn = null;
+		    
+		   }
+		   
+		  } // end of if
+		    
+	 }
 }

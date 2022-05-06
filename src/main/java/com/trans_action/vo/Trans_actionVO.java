@@ -6,7 +6,7 @@ public class Trans_actionVO {
 	private int id;
 	private String user_name;
 	private int balance;
-	private Timestamp date;
+	private Timestamp regidate;
 	
 	public int getId() {
 		return id;
@@ -26,11 +26,11 @@ public class Trans_actionVO {
 	public void setBalance(int balance) {
 		this.balance = balance;
 	}
-	public Timestamp getDate() {
-		return date;
+	public Timestamp getRegiDate() {
+		return regidate;
 	}
-	public void setDate(Timestamp date) {
-		this.date = date;
+	public void setRegiDate(Timestamp regidate) {
+		this.regidate = regidate;
 	}
 	
 	

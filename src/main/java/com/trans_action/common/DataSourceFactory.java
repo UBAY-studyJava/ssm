@@ -13,8 +13,8 @@ public class DataSourceFactory {
 	private InputStream is = null;
 	
 	public DataSourceFactory() {
-		String resource = "jdbc.properties";
-		is = getClass().getResourceAsStream(resource);
+		String resource = "db.properties";
+		is = getClass().getClassLoader().getResourceAsStream(resource);
 	}
 	
 	public DataSource getMySQLDataSource() {

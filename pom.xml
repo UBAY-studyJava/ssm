@@ -77,43 +77,46 @@
 		</dependency>
 
 		<!-- 4.Spring -->
-		<!-- 1)Spring核心 / Spring 핵심 -->
+ <!-- 	1)Spring核心 / Spring 핵심		 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>5.0.7.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>5.0.7.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>5.0.7.RELEASE</version>
 		</dependency>
+
+
+
 		<!-- 2)Spring DAO层(층) -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>5.0.7.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>5.0.7.RELEASE</version>
 		</dependency>
 		<!-- 3)Spring web -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>5.0.7.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>5.0.7.RELEASE</version>
 		</dependency>
 		<!-- Thymeleaf-->
 		<dependency>
@@ -126,13 +129,14 @@
     		<artifactId>thymeleaf-spring4</artifactId>
     		<version>3.0.11.RELEASE</version>
 		</dependency>
+
 		<!-- 4)Spring test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.1.7.RELEASE</version>
+			<version>5.0.7.RELEASE</version>
 		</dependency>
-
+		
 		<!-- redisClient:Jedis -->
 		<dependency>
 			<groupId>redis.clients</groupId>
@@ -162,6 +166,47 @@
     <version>21.5.0.0</version>
 	</dependency>
 	
+	
+	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+	<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.7.0</version>
+    <scope>test</scope>
+	</dependency>
+
+	
+	<!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.1</version>
+    <scope>test</scope>
+	</dependency>
+	
+	<dependency> <!-- 커넥션풀을 위한 dependency -->
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-dbcp2</artifactId>
+	<version>2.8.0</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
+	<dependency>
+    <groupId>org.bgee.log4jdbc-log4j2</groupId>
+    <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+    <version>1.16</version>
+	</dependency>
+	
+	
+	
 
 		<!-- Map工具类/MapTools -->
 		<dependency>
@@ -176,7 +221,13 @@
     		<version>1.11</version>
 		</dependency>
 	</dependencies>
+
 	<build>
+	<testResources>
+                <testResource>
+                    <directory>src/main/webapp</directory>
+                </testResource>
+    </testResources>
 		<finalName>ssm</finalName>
 		<plugins>
 			<plugin>
